@@ -147,9 +147,9 @@
           "operationId": "findPetsByStatus",
           "parameters": [
             {
-              "name": "status",
+              "name": "status1",
               "in": "query",
-              "description": "Status values that need to be considered for filter",
+              "description": "Status1 values that need to be considered for filter",
               "required": true,
               "style": "form",
               "explode": true,
@@ -165,6 +165,26 @@
                   ]
                 }
               }
+            },
+              {
+                "name": "status2",
+                "in": "query",
+                "description": "Status2 values that need to be considered for filter",
+                "required": false,
+                "style": "form",
+                "explode": true,
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "default": "available",
+                    "enum": [
+                      "available",
+                      "pending",
+                      "sold"
+                    ]
+                  }
+                }
             }
           ],
           "responses": {
